@@ -12,7 +12,7 @@
 						<p><span class="font-bold">Rating : </span>{{ movie.rating }}</p>
 					</div>
 				</div>
-			</div>
+			</div>  
 		</template>
 	</div>
      </div>
