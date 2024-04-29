@@ -1,10 +1,12 @@
 <template>
-	<div class="flex gap-2 flex-wrap justify-between">
+	 <div>
+        <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies</p>
+        <div class="flex gap-2 flex-wrap gap-5 justify-between">
 		<template v-for="movie in data">
 			<div class="flex flex-row border-2 w-[30%] p-5 gap-4">
 				<div class="flex flex-col items-center gap-3">
 					<NuxtImg :src="movie.image" />
-					<div class="text-[18px] flex flex-col justify-between">
+					<div class="text-[18px] flex flex-col gap-2 justify-between">
 						<p><span class="font-bold">Name : </span>{{ movie.title }}</p>
 						<p><span class="font-bold">Desc : </span>{{ movie.description }}</p>
 						<p><span class="font-bold">Rating : </span>{{ movie.rating }}</p>
@@ -13,6 +15,7 @@
 			</div>
 		</template>
 	</div>
+     </div>
 </template>
 
 <script setup>
