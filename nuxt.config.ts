@@ -2,8 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false},
   modules: ["@nuxt/ui", "@nuxt/image"],
-   ssr: false,
-   target: 'static',
+   ssr: false, 
   routeRules:{
     '/':{prerender:true}
   }
