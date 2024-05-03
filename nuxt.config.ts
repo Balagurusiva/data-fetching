@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: false},
   modules: ["@nuxt/ui", "@nuxt/image"],
   routeRules:{
-    '/':{isr:20}
+    '/':{prerender:true}
   }
 })
