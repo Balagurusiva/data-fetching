@@ -9,8 +9,8 @@
             <p>Wiki Data Id : {{ item.wikiDataId }}</p>
             <p>Country Code : {{ item.countryCode }}</p>
             <p> Country Latitude : {{ item.latitude }}</p>
-            <p>Country Longitide : {{ item.longitude }}</p>
-            
+            <p>Country Longitide  : {{ item.longitude }}</p>
+             
          </div>
          </div>
     </div>
