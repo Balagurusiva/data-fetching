@@ -9,7 +9,7 @@
 					<NuxtImg :src="movie.image" />
 					<div class="text-[18px] flex flex-col gap-2 justify-between">
 						<p><span class="font-bold">Name : </span>{{ movie.title }}</p>
-						<p><span class="font-bold">Desc : </span>{{ movie.description }}</p>
+						<p><span  class="font-bold">Desc : </span>{{ movie.description }}</p>
 						<p><span class="font-bold">Rating : </span>{{ movie.rating }}</p>
 					</div>
 				</div>

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: false},
   modules: ["@nuxt/ui", "@nuxt/image"],
-   render: {
+   render: { 
     ssr: true 
   },
   colorMode: {
