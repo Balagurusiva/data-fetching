@@ -2,10 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: false},
   modules: ["@nuxt/ui", "@nuxt/image"],
-   render: { 
-    ssr: true 
-  },
-  colorMode: {
-    preference: 'light'
+  routeRules:{
+    '/': {ssr:false}, //client side rendering
+    '/ssr':{ssr:true}, // server side rendering
+    '/isr':{isr:2300}, //increamental static rendering
+    '/ssg':{prerender:true}
   }
 })

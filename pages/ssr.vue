@@ -1,7 +1,7 @@
 <template>
 	 <div class="p-[50px]">
         <NuxtLink to="geo" class="text-[25px] mr-3 font-bold float-right">click here for country datas</NuxtLInk>
-        <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies <span id="clock">{{  new Date().toLocaleTimeString() }}</span></p>
+        <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies(ssr)<span id="clock">{{  new Date().toLocaleTimeString() }}</span></p>
          
         <div class="flex gap-2 flex-wrap gap-5 justify-between">
 		<template v-for="movie in data">
@@ -22,11 +22,6 @@
 
 <script setup>
 	import axios from "axios";
-    // var clockElement = document.getElementById("clock");
-    //     clockElement.innerText = new Date().toLocaleTimeString();
-        console.log( new Date().toLocaleTimeString())
-
-
 
 	const data = ref();
 	console.log(data.value);
@@ -38,10 +33,21 @@
 
 	try {
 		if (data.value == undefined) {
-			const response = await axios.request(options); 
+			const response = await axios.request(options);
+			console.log("request send");
 			data.value = response.data;
 		}
 	} catch (error) {
 		console.error(error);
-	} 
+	}
+	console.log(data.value[0]);
+    var clockElement = document.getElementById("clock");
+
+function updateClock (clock) {
+    clock.innerHTML = new Date().toLocaleTimeString();
+}
+
+setInterval(function () {
+    updateClock(clockElement);
+}, 1000);
 </script>
