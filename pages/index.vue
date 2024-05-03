@@ -27,11 +27,7 @@
 
 	const options = {
 		method: "GET",
-		url: "https://imdb-top-100-movies.p.rapidapi.com/",
-		headers: {
-			"X-RapidAPI-Key": "fa9c3d04afmshd4f95df7115ea89p1abcdcjsne644ba9b34c4",
-			"X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com",
-		},
+		url: "https://server-l96s.onrender.com/",
 	};
 
 	try {
