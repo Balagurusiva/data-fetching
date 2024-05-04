@@ -5,8 +5,10 @@
     <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies </p>
      <span id="clock">time after hydration :{{ currentTime }}</span>
     <pre>Time in server rendered HTML: {{ data }}</pre>
-    <div class="flex gap-2 flex-wrap gap-5 justify-between">
+    <div class="flex  flex-wrap gap-5 justify-between">
       <template v-for="movie in res">
+       
+      
         <div class="flex flex-row border-2 w-[30%] p-5 gap-4">
           <div class="flex flex-col items-center gap-3">
             <NuxtImg :src="movie.image" />
@@ -23,25 +25,28 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue"; // Import ref and onMounted from Vue Composition API
+import { ref} from "vue"; // Import ref and onMounted from Vue Composition API
 import axios from "axios";
 
-const res = ref(null);
+const res = ref();
 const currentTime = new Date().toLocaleTimeString();
-const { data } = await useFetch('/api/hello')
+const { data } = await useFetch('/api/hello') 
+// const response = await useFetch("https://server-l96s.onrender.com/") 
+// res.value = response.data
+// console.log(res.value[0])
 
 const options = {
   method: "GET",
   url: "https://server-l96s.onrender.com/",
 };
+ 
 
-// Fetch res from API on component mount
-onMounted(async () => {
+//onMounted(async () => {
   try {
     const response = await axios.request(options);
     res.value = response.data;
   } catch (error) {
     console.error(error);
   }
-});
+//});
 </script>
