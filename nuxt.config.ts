@@ -3,5 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: false},
   modules: ["@nuxt/ui", "@nuxt/image"],
    ssr: true, 
+   routeRules:{
+    '/':{isr:true}
+   }
   
 })
