@@ -3,7 +3,7 @@
     <NuxtLink to="geo" class="text-[25px] mr-3 font-bold float-right">click here for country ress</NuxtLink>
 
     <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies </p>
-     <span id="clock">time after hydrationi :{{ currentTime }}</span>
+     <span id="clock">time after hydration :{{ currentTime }}</span>
     <pre>Time in server rendered HTML: {{ data }}</pre>
     <div class="flex gap-2 flex-wrap gap-5 justify-between">
       <template v-for="movie in res">
@@ -39,7 +39,7 @@ const options = {
 onMounted(async () => {
   try {
     const response = await axios.request(options);
-    res.value = response.res;
+    res.value = response.data;
   } catch (error) {
     console.error(error);
   }
