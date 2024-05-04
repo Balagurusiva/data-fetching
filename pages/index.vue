@@ -1,9 +1,12 @@
  <template>
   <div class="p-[50px]">
-    <NuxtLink to="geo" class="text-[25px] mr-3 font-bold float-right">click here for country datas</NuxtLink>
-    <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies <span id="clock">{{ currentTime }}</span></p>
+    <NuxtLink to="geo" class="text-[25px] mr-3 font-bold float-right">click here for country ress</NuxtLink>
+
+    <p class="text-[30px] font-bold my-5 text-center">Top 100 Movies </p>
+     <span id="clock">time after hydrationi :{{ currentTime }}</span>
+    <pre>Time in server rendered HTML: {{ data }}</pre>
     <div class="flex gap-2 flex-wrap gap-5 justify-between">
-      <template v-for="movie in data">
+      <template v-for="movie in res">
         <div class="flex flex-row border-2 w-[30%] p-5 gap-4">
           <div class="flex flex-col items-center gap-3">
             <NuxtImg :src="movie.image" />
@@ -23,19 +26,20 @@
 import { ref, onMounted } from "vue"; // Import ref and onMounted from Vue Composition API
 import axios from "axios";
 
-const data = ref(null);
+const res = ref(null);
 const currentTime = new Date().toLocaleTimeString();
+const { data } = await useFetch('/api/hello')
 
 const options = {
   method: "GET",
   url: "https://server-l96s.onrender.com/",
 };
 
-// Fetch data from API on component mount
+// Fetch res from API on component mount
 onMounted(async () => {
   try {
     const response = await axios.request(options);
-    data.value = response.data;
+    res.value = response.res;
   } catch (error) {
     console.error(error);
   }
